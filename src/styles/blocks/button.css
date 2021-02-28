@@ -1,0 +1,66 @@
+.button {
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+
+  display: flex;
+
+  min-width: 120px;
+  min-height: 46px;
+
+  cursor: pointer;
+  transition: var(--animation);
+  letter-spacing: .02em;
+
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.button svg {
+  margin-right: 4px;
+
+  flex-shrink: 0;
+}
+
+.button:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+  background-color: var(--btn-active-color);
+}
+
+.button--clear {
+  background-color: var(--red);
+}
+
+.button--clear:hover {
+  background-color: var(--btn-clear-hover-color);
+}
+
+.button--clear:active,
+.button--clear:focus {
+  background-color: var(--btn-clear-active-color);
+}
+
+.button--clear:disabled {
+  cursor: initial;
+
+  background-color: var(--light-gray);
+}
+
+.button span {
+  /*font-variant: small-caps;*/
+
+  position: relative;
+  top: 1px;
+
+  /*text-transform: lowercase;*/
+}

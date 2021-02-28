@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <BaseApp :base="base" :id="id">
+    <template #sprite>
+      <SVGSprite />
+    </template>
+    <template #header>
+      {{ headerText }}
+    </template>
+    <template #main>
+      <AddTaskForm />
+      <TaskBoard />
+    </template>
+  </BaseApp>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapActions } from 'vuex'
+
+import store from './store/store'
+
+import BaseApp from './components/BaseApp.vue'
+import SVGSprite from './components/SVGSprite.vue'
+import AddTaskForm from './components/AddTaskForm.vue'
+import TaskBoard from './components/TaskBoard.vue'
+
+import { mockData } from './store/mockData'
 
 export default {
   name: 'App',
+  store,
   components: {
-    HelloWorld
-  }
+    BaseApp,
+    SVGSprite,
+    AddTaskForm,
+    TaskBoard,
+  },
+  data: () => ({
+    id: `app`,
+    base: `board-app`,
+    headerText: `Kanban Board`,
+  }),
+  mounted() {
+    this.setState(mockData)
+  },
+  methods: {
+    ...mapActions(['setState']),
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
