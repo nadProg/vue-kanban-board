@@ -11,9 +11,9 @@
   </draggable>
 </template>
 <script>
-import { mapGetters } from 'vuex'
-import draggable from 'vuedraggable'
-import TaskItem from './TaskItem.vue'
+import { mapGetters } from 'vuex';
+import draggable from 'vuedraggable';
+import TaskItem from './TaskItem.vue';
 
 export default {
   name: 'TaskListDraggable',
@@ -34,28 +34,28 @@ export default {
       done: 'Done',
       basket: 'Basket',
     },
-    itemBase: `task`,
+    itemBase: 'task',
   }),
   components: {
     draggable,
     TaskItem,
   },
   computed: {
-    ...mapGetters([`taskListByType`, `taskOrderListByType`]),
+    ...mapGetters(['taskListByType', 'taskOrderListByType']),
     taskList() {
-      return this.taskListByType(this.type)
+      return this.taskListByType(this.type);
     },
     taskIdList() {
-      return this.taskOrderListByType(this.type)
+      return this.taskOrderListByType(this.type);
     },
     listClass() {
       return [
         `${this.parentBase}__list`,
         `${this.parentBase}__list--${this.type}`,
-      ]
+      ];
     },
     itemClass() {
-      return `${this.parentBase}__item`
+      return `${this.parentBase}__item`;
     },
     dragOptions() {
       return {
@@ -64,16 +64,16 @@ export default {
         draggable: `.${this.itemBase}`,
         dragClass: `${this.itemBase}--dragged`,
         ghostClass: `${this.itemBase}--ghost`,
-      }
+      };
     },
     tasksModel: {
       get() {
-        return this.taskIdList
+        return this.taskIdList;
       },
       set(list) {
-        this.$emit(`list-update`, list)
+        this.$emit('list-update', list);
       },
     },
   },
-}
+};
 </script>

@@ -16,11 +16,11 @@ export default {
     BaseForm,
   },
   data: () => ({
-    base: `add-task`,
-    placeholder: `Add task content...`,
-    headerText: `Add new task`,
-    labelText: `New task`,
-    submitText: `Add`,
+    base: 'add-task',
+    placeholder: 'Add task content...',
+    headerText: 'Add new task',
+    labelText: 'New task',
+    submitText: 'Add',
   }),
   methods: {
     ...mapActions(['addNewTaskToBacklog']),

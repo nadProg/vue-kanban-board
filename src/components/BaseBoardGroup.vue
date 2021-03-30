@@ -10,7 +10,7 @@
   </article>
 </template>
 <script>
-import BaseClearButton from './BaseClearButton.vue'
+import BaseClearButton from './BaseClearButton.vue';
 
 export default {
   name: 'BaseBoardGroup',
@@ -36,23 +36,23 @@ export default {
   },
   computed: {
     groupClass() {
-      return `${this.base}__group`
+      return `${this.base}__group`;
     },
     headerClass() {
       return [
         `${this.base}__group-heading`,
         `${this.base}__group-heading--${this.type}`,
-      ]
+      ];
     },
     clearButtonText() {
-      return this.$slots['clear-button'][0].text
+      return this.$slots['clear-button'][0].text;
     },
   },
   methods: {
     onClearButtonClick() {
-      this.$emit(`clear-button-click`)
+      this.$emit('clear-button-click');
     },
   },
-}
+};
 </script>
 <style></style>

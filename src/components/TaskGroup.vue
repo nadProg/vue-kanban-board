@@ -18,10 +18,10 @@
   </BaseBoardGroup>
 </template>
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex';
 
-import BaseBoardGroup from './BaseBoardGroup.vue'
-import TaskListDraggable from './TaskListDraggable.vue'
+import BaseBoardGroup from './BaseBoardGroup.vue';
+import TaskListDraggable from './TaskListDraggable.vue';
 
 export default {
   name: 'TaskGroup',
@@ -46,23 +46,23 @@ export default {
       done: 'Done',
       basket: 'Basket',
     },
-    clearButtonText: `Clear`,
+    clearButtonText: 'Clear',
   }),
   computed: {
-    ...mapGetters([`isGroupEmpty`]),
+    ...mapGetters(['isGroupEmpty']),
     isBasket() {
-      return this.type === 'basket'
+      return this.type === 'basket';
     },
   },
   methods: {
-    ...mapActions([`updateGroup`, `clearGroup`]),
+    ...mapActions(['updateGroup', 'clearGroup']),
     onListUpdate(list) {
-      this.updateGroup({ type: this.type, list })
+      this.updateGroup({ type: this.type, list });
     },
     onClearButtonClick() {
-      this.clearGroup({ type: this.type })
+      this.clearGroup({ type: this.type });
     },
   },
-}
+};
 </script>
 <style></style>

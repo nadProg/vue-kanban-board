@@ -33,8 +33,8 @@ export default {
   name: 'BaseItem',
   data: () => ({
     editMode: false,
-    textAreaModel: ``,
-    textAreaHeight: ``,
+    textAreaModel: '',
+    textAreaHeight: '',
   }),
   props: {
     base: {
@@ -53,7 +53,6 @@ export default {
   watch: {
     content: {
       handler(val) {
-        console.log(this.$refs);
         this.textAreaModel = val;
         this.$nextTick(() => {
           this.onTextAreaInput();
@@ -83,7 +82,7 @@ export default {
     },
     buttonIconHash() {
       return `#${this.base}-${
-        this.editMode ? `edit` : `view`
+        this.editMode ? 'edit' : 'view'
       }-mode-button-icon`;
     },
   },
@@ -93,7 +92,7 @@ export default {
     },
     onTextAreaBlur() {
       this.editMode = false;
-      this.$emit(`change`, this.textAreaModel);
+      this.$emit('change', this.textAreaModel);
     },
     onButtonFocus(evt) {
       if (evt.relatedTarget === this.$refs.textAreaRef)

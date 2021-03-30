@@ -13,16 +13,16 @@
   </BaseApp>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
-import store from './store/store'
+import store from './store/store';
 
-import BaseApp from './components/BaseApp.vue'
-import SVGSprite from './components/SVGSprite.vue'
-import AddTaskForm from './components/AddTaskForm.vue'
-import TaskBoard from './components/TaskBoard.vue'
+import BaseApp from './components/BaseApp.vue';
+import SVGSprite from './components/SVGSprite.vue';
+import AddTaskForm from './components/AddTaskForm.vue';
+import TaskBoard from './components/TaskBoard.vue';
 
-import { mockData } from './store/mockData'
+import { mockData } from './store/mockData';
 
 export default {
   name: 'App',
@@ -34,15 +34,15 @@ export default {
     TaskBoard,
   },
   data: () => ({
-    id: `app`,
-    base: `board-app`,
-    headerText: `Kanban Board`,
+    id: 'app',
+    base: 'board-app',
+    headerText: 'Kanban Board',
   }),
   mounted() {
-    this.setState(mockData)
+    this.setState(mockData);
   },
   methods: {
     ...mapActions(['setState']),
   },
-}
+};
 </script>

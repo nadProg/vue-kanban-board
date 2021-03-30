@@ -47,7 +47,7 @@ export default {
     },
   },
   data: () => ({
-    base: `button`,
+    base: 'button',
   }),
   computed: {
     buttonClass() {
@@ -55,13 +55,13 @@ export default {
         `${this.parentBase}__${this.base}`,
         `${this.base}`,
         `${this.base}--clear`,
-      ]
+      ];
     },
   },
   methods: {
     onClick() {
-      this.$emit('click')
+      this.$emit('click');
     },
   },
-}
+};
 </script>

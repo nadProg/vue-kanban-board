@@ -30,7 +30,7 @@ export default new Vuex.Store({
       });
     },
     updateGroup({ commit, getters }, { type, list }) {
-      commit(`updateGroup`, { group: getters.groupMap[type], list });
+      commit('updateGroup', { group: getters.groupMap[type], list });
     },
     clearGroup({ commit, getters }, { type }) {
       commit('clearGroup', {
@@ -55,18 +55,18 @@ export default new Vuex.Store({
   },
   mutations: {
     updateTaskContent(_, { task, content }) {
-      Vue.set(task, `content`, content);
+      Vue.set(task, 'content', content);
     },
     addNewTaskToGroup(_, { group, task, taskMap }) {
-      Vue.set(group, `content`, task);
+      Vue.set(group, 'content', task);
       Vue.set(taskMap, task.id, task);
       group.orderList.push(task.id);
     },
     updateGroup(_, { group, list }) {
-      Vue.set(group, `orderList`, list);
+      Vue.set(group, 'orderList', list);
     },
     clearGroup(_, { group, taskToDelete, taskMap }) {
-      Vue.set(group, `orderList`, []);
+      Vue.set(group, 'orderList', []);
       taskToDelete.forEach((id) => delete taskMap[id]);
     },
   },

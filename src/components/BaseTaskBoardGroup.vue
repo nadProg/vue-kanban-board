@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     clearGroup() {
-      this.$emit(`clear-basket`);
+      this.$emit('clear-basket');
     },
   },
 };

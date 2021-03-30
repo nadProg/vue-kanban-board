@@ -26,12 +26,12 @@ export default {
     TaskGroup,
   },
   data: () => ({
-    base: `taskboard`,
-    headerText: `Your tasks`,
+    base: 'taskboard',
+    headerText: 'Your tasks',
   }),
   computed: {
     ...mapState({
-      groupTypes: `orderList`,
+      groupTypes: 'orderList',
     }),
   },
 };

@@ -34,7 +34,7 @@
 </template>
 <script>
 export default {
-  name: `BaseForm`,
+  name: 'BaseForm',
   props: {
     base: {
       type: String,
@@ -46,8 +46,8 @@ export default {
     },
   },
   data: () => ({
-    inputModel: ``,
-    buttonBase: `button`,
+    inputModel: '',
+    buttonBase: 'button',
   }),
   computed: {
     blockClass() {
@@ -66,13 +66,13 @@ export default {
       return `${this.base}__header`;
     },
     buttonIconHash() {
-      return `#${this.base}-button-icon`
-    }
+      return `#${this.base}-button-icon`;
+    },
   },
   methods: {
     onFormSubmit() {
-      this.$emit(`submit`, this.inputModel);
-      this.inputModel = ``;
+      this.$emit('submit', this.inputModel);
+      this.inputModel = '';
     },
   },
 };

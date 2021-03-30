@@ -7,9 +7,9 @@ export default class AbstractModel {
   }
 
   createItemsByType(list) {
-    list.forEach(item => {
+    list.forEach((item) => {
       if (typeof item === 'string') {
-        this.createItemByType(item)
+        this.createItemByType(item);
       }
     });
 

@@ -1,4 +1,4 @@
-import AbstractMapModel from './AbstractMapModel'
+import AbstractMapModel from './AbstractMapModel';
 import TaskGroupFactory from './TaskGroupFactory';
 
 // const taskGroupFactory = new TaskGroupFactory();

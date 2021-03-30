@@ -8,8 +8,8 @@ export default class TaskGroupFactory {
       processing: ProcessingTaskGroup,
       done: DoneTaskGroup,
       basket: BasketTaskGroup,
-      abstract: AbstractListModel
-    }
+      abstract: AbstractListModel,
+    };
   }
 
   create(type = 'abstract') {

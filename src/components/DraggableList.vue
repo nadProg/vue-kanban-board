@@ -67,11 +67,7 @@ export default {
         return this.tasks;
       },
       set(list) {
-        console.log(`==============`);
-        console.log(`setter taskList`);
-        console.log(list);
-        console.log(`==============`);
-        this.$emit(`list-update`, list);
+        this.$emit('list-update', list);
       },
     },
   },
