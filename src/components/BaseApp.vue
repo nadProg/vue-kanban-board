@@ -1,6 +1,9 @@
 <template>
   <article :class="base">
-    <div v-show="false">
+    <div
+      class="ally-hidden"
+      role="presentation"
+    >
       <slot name="sprite" />
     </div>
     <header :class="headerClass">

@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import App from './App.vue';
+import TheApp from './TheApp.vue';
 
-import './styles/main.scss';
+import './assets/styles/main.scss';
 
 Vue.config.productionTip = false;
 
 new Vue({
-  render: (h) => h(App),
+  render: (h) => h(TheApp),
 }).$mount('#app');

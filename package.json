@@ -1,13 +1,27 @@
 {
   "name": "vue-kanban-board",
-  "version": "0.1.1",
+  "private": true,
+  "version": "0.1.2",
+  "description": "Vue implementation of HTML Academy skill - kanban-board.",
+  "keywords": [
+    "vue2, vuex3, vuedraggable"
+  ],
+  "homepage": "https://github.com/nadProg/vue-kanban-board",
+  "license": "ISC",
+  "author": "Eugene Skrobov <skrobov.ev@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nadProg/vue-kanban-boardue-site-constructor.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "nanoid": "^3.1.23",
     "vue": "^2.6.11",
     "vuedraggable": "^2.24.3"
   },
@@ -16,7 +30,7 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-config-htmlacademy": "^3.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "normalize.css": "^8.0.1",
@@ -25,25 +39,6 @@
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.12",
     "vuex": "^3.6.2"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true,
-      "es2017": true,
-      "browser": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "htmlacademy/vanilla"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint",
-      "ecmaVersion": 2018,
-      "sourceType": "module"
-    },
-    "rules": {}
   },
   "browserslist": [
     "> 1%",

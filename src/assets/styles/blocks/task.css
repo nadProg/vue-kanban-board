@@ -1,0 +1,144 @@
+.task {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+
+  position: relative;
+
+  display: flex;
+
+  width: 100%;
+  padding: 16px 14px;
+
+  border-left: 6px solid var(--task-border-color);
+  border-radius: 8px;
+  background-color: #fff;
+
+  touch-action: none;
+}
+
+.task:hover {
+  cursor: pointer;
+}
+
+.task p {
+  position: relative;
+  z-index: 2;
+
+  flex-grow: 1;
+
+  word-break: break-word;
+}
+
+.task::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -6px;
+
+  content: '';
+  transition: var(--animation);
+  transition-property: border-color;
+  pointer-events: none;
+
+  border: 0 solid;
+  border-color: transparent;
+  border-radius: 8px;
+}
+
+.task:hover::after,
+.task--active::after {
+  border-width: 1px;
+  border-color: var(--task-active-border-color);
+}
+
+.task--empty::after {
+  display: none;
+}
+
+.task:hover .task__edit {
+  opacity: .7;
+}
+
+.task:hover .task__edit:hover {
+  opacity: 1;
+}
+
+.task--active .task__edit,
+.task--active:hover .task__edit {
+  opacity: 1;
+}
+
+.task--ghost {
+  --edit-btn-display: none;
+
+  color: var(--inactive-color);
+  border: 1px dashed var(--inactive-color);
+  background-color: transparent;
+}
+
+.task--ghost::after {
+  display: none;
+}
+
+.task--dragged {
+  border-left-style: dashed;
+}
+
+.task--empty:hover {
+  cursor: default;
+}
+
+.task__body {
+  flex: 1;
+}
+
+.task__edit {
+  display: var(--edit-btn-display);
+  position: relative;
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  padding: 0;
+
+  cursor: pointer;
+  transition: var(--animation);
+
+  border: none;
+  background-color: transparent;
+}
+
+.task__edit:active,
+.task__edit:focus {
+  outline: none;
+}
+
+.task__input {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+
+  overflow: hidden;
+
+  width: 100%;
+  padding: 4px;
+
+  opacity: .8;
+  color: var(--text-main-color);
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+}
+
+.task__input:focus,
+.task__input:active {
+  border-color: var(--input-border-active-color);
+  outline: none;
+}
+
+.task__view {
+  padding: 2px 0;
+}

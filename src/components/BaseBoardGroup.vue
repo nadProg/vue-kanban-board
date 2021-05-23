@@ -3,9 +3,21 @@
     <h3 :class="headerClass">
       <slot name="header" />
     </h3>
+    <p
+      v-if="isEmpty"
+      class="ally-hidden"
+    >
+      <slot name="list-placeholder" />
+    </p>
     <slot name="list" />
-    <BaseClearButton v-if="isShowClearButton" :disabled="isEmpty" @click="onClearButtonClick">
-      {{ clearButtonText }}
+    <BaseClearButton
+      v-if="isShowClearButton"
+      :base="buttonBase"
+      :class="`${base}__${buttonBase}`"
+      :disabled="isEmpty"
+      @click="$emit('clear-button-click')"
+    >
+      <slot name="clear-button" />
     </BaseClearButton>
   </article>
 </template>
@@ -22,12 +34,17 @@ export default {
       type: String,
       required: true,
     },
+    buttonBase: {
+      type: String,
+      required: true,
+    },
     type: {
       type: String,
       required: true,
     },
     isEmpty: {
       type: Boolean,
+      default: true,
     },
     isShowClearButton: {
       type: Boolean,
@@ -36,21 +53,10 @@ export default {
   },
   computed: {
     groupClass() {
-      return `${this.base}__group`;
+      return [`${this.base}__group`, `${this.base}__group--${this.type}`];
     },
     headerClass() {
-      return [
-        `${this.base}__group-heading`,
-        `${this.base}__group-heading--${this.type}`,
-      ];
-    },
-    clearButtonText() {
-      return this.$slots['clear-button'][0].text;
-    },
-  },
-  methods: {
-    onClearButtonClick() {
-      this.$emit('clear-button-click');
+      return `${this.base}__group-heading`;
     },
   },
 };

@@ -38,21 +38,18 @@
 export default {
   name: 'BaseClearButton',
   props: {
-    parentBase: {
+    base: {
       type: String,
+      required: true,
     },
     disabled: {
       type: Boolean,
       default: false,
     },
   },
-  data: () => ({
-    base: 'button',
-  }),
   computed: {
     buttonClass() {
       return [
-        `${this.parentBase}__${this.base}`,
         `${this.base}`,
         `${this.base}--clear`,
       ];
